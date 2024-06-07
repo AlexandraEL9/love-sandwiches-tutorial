@@ -1,0 +1,41 @@
+--------------------------------------------------------------------LOVE SANDWICHES
+
+________________________________Introduction
+
+Python in real world context
+
+Build a project called Love SANDWICHES
+
+A command line based Python program to handle data  automation for a 
+fictional sandwich company.
+
+Love Sandwiches runs a local market stall, selling  a small range of 
+sandwiches.
+For each market day, their staff pre-make stock to sell. If they sell out 
+of a particular sandwich, their staff make extra for their customers. 
+And the unsold  ones are thrown away at the end of the day.
+
+we need to make a program that:
+              collects the company's market day sales data
+              calculate the surplus for the day
+              produce reccommendations for the number of each sandwich to make
+                  for the next market day
+              
+        goal to save staff time by automating a repetitive task
+                reduce surplus
+
+we will wire up our Python to interact with a Google Sheet- and be able
+   to push and pull data to and from the spreadsheet
+
+
+____________________________________________________Getting set up
+-----------------------------------------------Google Sheet
+
+It’s important to note here that when you want  to access and manipulate data from a spreadsheet
+you should keep the information within  your tables in clean rows and columns.
+Just column headings and cells of data.
+
+----------------------------------------------- Activating API credentials
+
+
+
