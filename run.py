@@ -31,7 +31,27 @@ def get_sales_data():
     print("Example: 10,20,30,40,50,60\n")
     #use input method to get our sales data from the user in the terminal
     data_str = input("Enter your data here: ")
-    print(f"The data provided is: {data_str}")
+    #print(f"The data provided is: {data_str}")
+
+    # validata data 1- create nw varible
+    sales_data = data_str.split(",")
+    validate_data(sales_data)
+
+#validation function
+def validate_data(values):
+    """
+    inside the try, convert all string values to integers,
+    raises valueErrot if string cannot be converted to integer,
+    or if there aren't exactly 6 values
+    """
+    try:
+        if len(values) != 6:
+            raise ValueError(
+                f"Exactly 6 values required, you provided {len(values)}"
+            )
+    except ValueError as e:
+        print(f"Invalid data: (e), please try again.\n")
+
 #call function outside of the function
 get_sales_data()
 #can enter data into the terminal and then terminal reiterates back
