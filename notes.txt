@@ -190,4 +190,86 @@ append our column  list to our columns list.
      [-5]
 
 
+def get_last_5_entries_sales():
+    """
+    Collects columns of data from sales worksheet, collecting
+    the last 5 entries for each sandwich and returns the data
+    as a list of lists.
+    """
+    sales = SHEET.worksheet("sales")
+
+    columns = []
+    for ind in range(1, 7):
+        column = sales.col_values(ind)
+        columns.append(column[-5:])
+
+    return columns
+
+--------------------------------------------calculate stock averages
+
+use this data to calculate our recommended stock for the next Love Sandwiches market.
+
+create a new function called calculate_stock_data,
+pass it the stock_data that our get_last_5_entries_sales function returned.
+
+
+def calculate_stock_data(data):
+    """
+    Calculate the average stock for each item type, adding 10%
+    """
+    print("Calculating stock data...\n")
+
+-function needs to calculate the average from each list in our data.
+-use another for loop and we'll insert our completed averages into a new list as we iterate through our for loop.
+
+- set up the new empty list first, I’ll name this new_stock_data.
+
+       new_stock_data = []
+
+- for loop, to loop through each column in our data.
+       
+       for column in data:
+
+- to do mathematical calculations with our column values,
+we need to convert them into integers again  with a list comprehension.
+     
+     int_column = [int(num) for num in column]
+
+- work out averages- 
+-the sum of our values, divided by the number of values.
+- do this using the handy sum and len methods in Python.
+declare a new variable called average,
+and we'll calculate the average as the sum  of our int_column data divided by its length
+   
+                 average = sum(int_column) / len(int_column)
+
+- add 10% to this, because additional stock  often results in better sales.
+create a new variable called stock_num and make its value the calculated average multiplied by 1.1,
+which will add 10% to the average.
+
+           stock_num = average * 1.1
+
+-append this calculated stock_num to the new_stock_data list outside the for loop.
+       
+       new_stock_data.append(round(stock_num))
+
++round our stock numbers to whole  numbers, so we'll use the round() method to do this.
+
+-return this value from our function.
+
+         return new_stock_data
+
+-assign it to a variable back where function is called   (in main)
+
+    stock_data = calculate_stock_data(sales_columns)
+
+
+
+         
+
+
+
+
+
+
  
