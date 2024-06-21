@@ -131,3 +131,63 @@ def main():
     update_worksheet(new_surplus_data, "surplus")
 
 
+
+------------------------------------------------------------working out what to make for next time
+--------------------------------------getting sales data
+ get the sales data  we need to make our stock calculation.
+
+ Our recommended stock numbers for  the next market will be calculated
+using the average number of  sandwiches sold in the last 5 markets.
+
+get data for each sandwich type- last five entries- add up and divide by 5.
+
+Then The marketing department at Love Sandwiches want to increase the stock numbers by 10% above the
+averages, to encourage more sales. So our program  will take this number and increase it by 10%.
+Also round to whole sandwiches
+
+The first thing we need to do then, is  get the last 5 records for each sandwich.
+So we’ll 
+-create a function to do that. 
+
+def get_last_5_entries_sales
+"""
+    Collects columns of data from sales worksheet, collecting
+    the last 5 entries for each sandwich and returns the data
+    as a list of lists.
+    """
+
+-create sales avariable
+    sales = SHEET.worksheet("sales")
+
+-use col_values() method to to get data in columns
+    column = sales.col_values(3)    - third column examole
+    print(column)
+
+-  get lists of numbers from every  column 1, 2, 3 and all the way up to column 6.
+   get all of these  columns as lists nested in a list
+   with a for loop.
+
+ - create a new empty list called columns.
+            columns = [] 
+-append our column lists into  this list so that we have them all together.
+
+-create a for loop. -loop 6 times, one for each column in my data.
+-use the value of the loop  index to access each column of data in turn.
+           
+           for ind in range(1, 7):
+
+-create a column variable to store the column inside our for loop
+use the col_values() method on the  sales variable, and pass it our ind variable.
+      
+      column = sales.col_values(ind)
+
+append our column  list to our columns list.
+
+       columns.append(column[-5:])
+
+- limit to last 5 entries from each column. 
+- use a slice
+     [-5]
+
+
+ 
